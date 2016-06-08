@@ -1,0 +1,18 @@
+---
+
+wpad__nginx__servers:
+  by_role: 'le90nx.squid'
+  enabled: True
+  default: False
+  listen: ['80','[::]:80']
+  ssl: False
+  name: [ ]
+#"{{ mailweb_domain_www }}"
+  #root: '/srv/www/sites/mail/public'
+  #options: "{{mail_options}}"
+  location:
+    '/': ''
+  #location_allow: "{{mail_location_allow}}"
+  #php5: 'php5_mail'
+
+## vim: foldmethod=marker:tabstop=2:shiftwidth=2:softtabstop=2

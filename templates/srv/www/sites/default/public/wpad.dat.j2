@@ -1,0 +1,29 @@
+function FindProxyForURL(url, host) 
+{
+    if (shExpMatch( host, "192.168.0.*" ) ||
+        shExpMatch( host, "192.168.63.*" ) ||
+        shExpMatch( host, "127.*" ) ||
+        shExpMatch( host, "localhost" ) ||
+        shExpMatch( host, "*.my" ) ||
+        isPlainHostName( host ))
+        {return "DIRECT";}
+    if (isInNet(host, "89.249.27.226", "255.255.255.255"))
+    {
+             return "DIRECT";
+    }
+
+   if (isInNet(host, "192.168.0.0", "255.255.0.0")) 
+   {
+      return "DIRECT";
+   } 
+   else 
+   {
+      if (shExpMatch(url, "http:*"))
+         return "PROXY proxy:3128; DIRECT";
+      if (shExpMatch(url, "https:*"))
+         return "PROXY proxy:3128; DIRECT";
+      if (shExpMatch(url, "ftp:*"))
+         return "PROXY proxy:3128; DIRECT";
+      return "DIRECT";
+   }
+}

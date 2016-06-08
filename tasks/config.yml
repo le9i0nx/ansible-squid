@@ -1,0 +1,11 @@
+---
+
+- name: Configure wpad.dat
+  template:
+    src: "srv/www/sites/default/public/wpad.dat.j2"
+    dest: '/srv/www/sites/default/public/wpad.dat'
+    owner: 'root'
+    group: 'root'
+    mode: '0644'
+
+## vim: foldmethod=marker:tabstop=2:shiftwidth=2:softtabstop=2
